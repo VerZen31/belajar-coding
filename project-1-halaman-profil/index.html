@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Aldi</title>
+  <style>
+    /* Bagian ini namanya CSS — mengatur tampilan */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+    .avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 38px; margin-bottom: 20px;
+    }
+    h1 { font-size: 26px; margin-bottom: 6px; }
+    .role { color: #38bdf8; font-size: 15px; margin-bottom: 20px; }
+    .bio { color: #94a3b8; line-height: 1.6; margin-bottom: 24px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .skill {
+      background: #334155;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    .links a {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-right: 8px;
+    }
+    .links a:hover { background: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="avatar">👨💻</div>
+
+    <!-- UBAH BAGIAN INI dengan datamu -->
+    <h1>Aldi</h1>
+    <div class="role">Teknik Informatika · Network Enthusiast</div>
+
+    <p class="bio">
+      Saya lulusan Teknik Informatika yang sedang belajar coding
+      untuk membangun aplikasi dan otomasi. Fokus saya saat ini
+      adalah jaringan komputer dan Python.
+    </p>
+
+    <div class="skills">
+      <span class="skill">Networking</span>
+      <span class="skill">Python</span>
+      <span class="skill">HTML/CSS</span>
+      <span class="skill">Git</span>
+    </div>
+
+    <div class="links">
+      <a href="#">GitHub</a>
+      <a href="#">Email</a>
+    </div>
+    <!-- SAMPAI SINI -->
+  </div>
+</body>
+</html>
